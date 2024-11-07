@@ -1,0 +1,49 @@
+# Create tsconfig.json
+    -{
+        "compilerOptions": {
+            "module": "commonjs",
+            "esModuleInterop": true,
+            "target": "es6",
+            "moduleResolution": "node",
+            "sourceMap": true,
+            "outDir": "build"
+        },
+        "lib" : ["es2015"]
+    }
+
+# Create package.json file(NodeJS Environment)
+    - npm init -y
+
+# Install TypeScript
+    - npm install --save-dev typescript
+
+# Add in package.json 
+    - Script Section
+        - "dev" : "tsc && node build/index.js" ==> tsc convert ts file to js file and node build/index.js run index.js file 
+        - "start" : "ts-node src/index.ts" ==> when start server index.ts is the first file to run.
+        - "build" : "tsc" ==> convert TypeScript files to JavaScript files
+
+
+# npm install(apply all changes made to package.json)
+    - npm i or npm install
+
+# Build(convert TypeScript files to JavaScript files)
+    - npm run build 
+    [NOTE: if converted Js Files stored in the same src folder so change "outDir": "build" to "outDir": "./build" 
+        in the tsconfig.json file and run this command again.]
+
+# Add dependencies to package.json
+    "dependencies": {
+    "@types/express": "5.0.0",
+    "@types/cors": "2.8.17",
+    "express": "4.21.1",
+    "http": "0.0.1-security",
+    "body-parser": "1.20.3"
+    }
+
+    # install all changes made to package.json
+    npm install
+
+
+# Run application
+    - npm run dev
